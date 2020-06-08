@@ -1,0 +1,30 @@
+.category-box__header {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.category-box-wrapper {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.category-box__button-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.button--green {
+    padding: 1rem;
+    background-color: rgb(72, 173, 102);
+    border-radius: .5rem;
+    width: auto;
+    margin-bottom: 1rem;
+}
+.progress-node--1 {
+    background-image: url('/images/bar-start.png');
+    height: 2rem;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

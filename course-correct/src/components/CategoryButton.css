@@ -1,0 +1,28 @@
+.category-button {
+    /* height: 8rem; */
+    width: 16rem;
+    background: lightgrey;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    color: rgb(129, 129, 129);
+    padding: 1rem 0;
+    margin: 1rem;
+}
+
+.category-button__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    filter: invert(.5);
+}
+
+.category-button p {
+    margin: 0;
+}
+
+.hover {
+    color: white;
+    background-color: hsl(204, 59%, 49%);
+}
+.hover .category-button__icon {
+    filter: invert(1)
+}

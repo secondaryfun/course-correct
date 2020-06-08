@@ -1,5 +1,5 @@
 import React from 'react';
-import Advisor from './Advisor';
+import CategoryBox from './components/CategoryBox';
 import './App.css';
 
 function App() {
@@ -7,10 +7,10 @@ function App() {
 		<div className="body-wrapper">
 			<div className="body-overlay">
 				<header className="logo-header header">
-					<img src="/images/course-logo-color.png" className="header__logo" />
+					<img src="/images/course-logo-color.png" alt="course-correct-logo" className="header__logo" />
 					<h3>Find your path</h3>
 				</header>
-				<Advisor />
+				<CategoryBox />
 				<footer className="footer">
 					<p>2020 CourseCorrect.</p>
 				</footer>
