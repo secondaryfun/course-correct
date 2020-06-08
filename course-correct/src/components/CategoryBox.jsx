@@ -1,33 +1,48 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Route } from 'react-router-dom'
+
 import './CategoryBox.css';
-import categoryList from '../data/courses.json'
+import categoryList from '../data/courseList.json'
 import CategoryButton from './CategoryButton'
+import InfoPage from './InfoPage'
 console.log(categoryList)
 
-class CategoryBox extends Component {
-    constructor(props) {
-        super(props)
+function CategoryBox() {
+    return (
+        <div>
+            <Route
+                path="/"
+                exact
+                render={() => {
+                    return (
+                        <div className="category-box-wrapper">
+                            <h4 className="category-box__header">What do you want to learn about?</h4>
+                            <section className="category-box__button-container">
+                                {categoryList.map(cat => {
+                                    return <CategoryButton category={cat} />
+                                })}
+                            </section>
+                            <div className="progress-node--1"></div>
+                        </div>
+                    )
+                }}
+            />
+            <Route
+                path={`/category/:category`}
+                exact
+                render={routerProps => {
 
-        this.state = {
+                    let { category } = routerProps.match.params
+                    let queryItem = categoryList.find(item => {
+                        let linkName = item.replace(/ /g, "-")
+                        return linkName === category
+                    })
+                    return <InfoPage category={queryItem} />
+                }}
+            />
+        </div >
+    )
 
-        }
-    }
-
-    render() {
-        return (
-            <div className="category-box-wrapper">
-                <h4 className="category-box__header">What do you want to learn about?</h4>
-                {/* <p>Choose as many subjects as you like.</p> */}
-                <section className="category-box__button-container">
-                    {categoryList.map(cat => {
-                        return <CategoryButton category={cat} />
-                    })}
-                </section>
-                {/* <div className="button--green">LET'S GET MORE SPECIFIC</div> */}
-                <div className="progress-node--1"></div>
-            </div>
-        )
-    }
 }
 
 

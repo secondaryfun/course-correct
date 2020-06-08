@@ -9,6 +9,10 @@
     margin: 1rem;
 }
 
+.category-button a {
+    text-decoration: none !important;
+}
+
 .category-button__icon {
     height: 2.5rem;
     width: 2.5rem;
@@ -19,10 +23,10 @@
     margin: 0;
 }
 
-.hover {
+.category-button:hover {
     color: white;
     background-color: hsl(204, 59%, 49%);
 }
-.hover .category-button__icon {
+.category-button:hover .category-button__icon {
     filter: invert(1)
 }
