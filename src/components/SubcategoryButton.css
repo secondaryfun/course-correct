@@ -1,0 +1,16 @@
+.sub-category-button {
+        width: 16rem;
+        background: lightgrey;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        color: rgb(129, 129, 129);
+        padding: .5rem 0;
+        margin: .5rem;
+}
+.sub-category-button:hover {
+    color: white;
+    background-color: hsl(204, 59%, 49%);
+}
+.sub-category-button p {
+    margin: 0;
+}

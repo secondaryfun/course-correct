@@ -6,18 +6,17 @@ import './CategoryButton.css'
 class CategoryButton extends Component {
     constructor(props) {
         super(props)
-        let imgPath = "/images/icons/" + props.category + ".svg"
 
         this.state = {
             linkName: props.category.replace(/ /g, "-"),
             imgPath: "/images/icons/" + props.category + ".svg",
-            linkStyle: { "text-decoration": "none" }
+            linkStyle: { "textDecoration": "none" }
         }
     }
 
     render() {
         return (
-            <Link to={`/category/${this.state.linkName}`} style={this.state.linkStyle} >
+            <Link to={this.props.sub ? `/subcategory/${this.state.linkName}` : `/category/${this.state.linkName}`} style={this.state.linkStyle} >
 
                 <div className="category-button">
                     <img src={this.state.imgPath} alt={this.props.category} className="category-button__icon" />

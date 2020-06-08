@@ -1,5 +1,4 @@
 .category-button {
-    /* height: 8rem; */
     width: 16rem;
     background: lightgrey;
     border-radius: 8px;
@@ -7,10 +6,6 @@
     color: rgb(129, 129, 129);
     padding: 1rem 0;
     margin: 1rem;
-}
-
-.category-button a {
-    text-decoration: none !important;
 }
 
 .category-button__icon {

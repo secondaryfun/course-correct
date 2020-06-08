@@ -20,11 +20,15 @@
     width: auto;
     margin-bottom: 1rem;
 }
-.progress-node--1 {
+.progress-node {
     background-image: url('/images/bar-start.png');
     height: 2rem;
     width: 100%;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.progress-node--2 {
+    background-image: url('/images/bar-half.png');
 }
