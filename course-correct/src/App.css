@@ -1,12 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
 html {
   font-family: "Open Sans", Arial;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  margin-bottom: 1rem
 }
 
 html, body, #root, .App {
   height: 100%;
   color: white;
+  background-color: rgba(0, 0, 0, .8);
   margin: 0;
   padding: 0;
 }
@@ -24,14 +35,16 @@ html, body, #root, .App {
   width: 100%;
 }
 .header {
-  height: 5vh;
-
+    border-bottom: 1px grey solid;
+    text-align: center;
 }
 .header__logo {
-  height: 100%;
+  height: 6rem;
   width: auto;
 }
-footer {
+.footer {
   position: relative;
-  bottom: -100vh;
+  bottom: -85vh;
+  font-size: .8rem;
+  padding: 2rem;
 }

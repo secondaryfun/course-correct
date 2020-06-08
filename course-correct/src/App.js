@@ -6,13 +6,14 @@ function App() {
 	return (
 		<div className="body-wrapper">
 			<div className="body-overlay">
-				<header className="logo-header">
+				<header className="logo-header header">
 					<img src="/images/course-logo-color.png" className="header__logo" />
-					<h1>Course Correct:</h1>
-					<p>Find your path</p>
+					<h3>Find your path</h3>
 				</header>
 				<Advisor />
-				<footer className="footer">&copy 2020 CourseCorrect.</footer>
+				<footer className="footer">
+					<p>2020 CourseCorrect.</p>
+				</footer>
 			</div>
 		</div>
 	);
