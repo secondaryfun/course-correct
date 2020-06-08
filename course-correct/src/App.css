@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+html {
+  font-family: "Open Sans", Arial;
+}
+
+html, body, #root, .App {
+  height: 100%;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.body-wrapper {
+  height: 100%;
+  width: 100%;
+  background: url("/images/globe.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.body-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+}
+.header {
+  height: 5vh;
+
+}
+.header__logo {
+  height: 100%;
+  width: auto;
+}
+footer {
+  position: relative;
+  bottom: -100vh;
+}
