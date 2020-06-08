@@ -21,13 +21,10 @@ export default class App extends Component {
 		fetch(url)
 			.then(res => res.json())
 			.then(result => {
-				console.log(result)
 				this.setState({ categoryList: result });
-				console.log(this.state.categoryList)
 			}).catch(err => console.log(err))
 	}
 	render() {
-		console.log(this.state.categoryList)
 		return (
 			<div className="body-wrapper">
 				<div className="body-overlay">

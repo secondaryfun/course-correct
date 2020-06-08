@@ -5,6 +5,7 @@ import './CategoryBox.css';
 import categoryList from '../data/courseList.json'
 import CategoryButton from './CategoryButton'
 import SubcategoryButton from './SubcategoryButton'
+import SearchResultsPage from './SearchResultsPage'
 // console.log(categoryList)
 
 
@@ -12,10 +13,24 @@ export class CategoryBox extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isSubcategory: props.sub
+            courseList: { courses: [] },
+            userPick: ""
         }
     }
+    componentDidUpdate(prevProps, prevState) {
+        this.state.userPick ? getCourses(this.state.userPick)
+    }
 
+    getCourses = (category) => {
+        const url = "https://rocky-refuge-49252.herokuapp.com/courses/sub-category/" + category.replace(/-/g, " ")
+
+        fetch(url)
+            .then(res => res.json())
+            .then(results => {
+                console.log(results)
+                this.setState({ courseList: results });
+            }).catch(err => console.log(err))
+    };
     render() {
         let catList = []
         if (this.props.categoryList.length) catList = this.props.categoryList
@@ -30,7 +45,7 @@ export class CategoryBox extends Component {
                                 <h4 className="category-box__header">What do you want to learn about?</h4>
                                 <section className="category-box__button-container">
                                     {catList.map(cat => {
-                                        return <CategoryButton category={cat.title} sub={false} />
+                                        return <CategoryButton category={cat.title} />
                                     })
                                     }
                                 </section>
@@ -67,19 +82,15 @@ export class CategoryBox extends Component {
                         )
                     }}
                 />
-                {/* <Route
+                <Route
                     path={`/subcategory/:category`}
                     exact
                     render={routerProps => {
-
-                        let { queryItem } = routerProps.match.params
-                        let queryItem = this.state.courseList.find(item => {
-                            let linkName = item.replace(/ /g, "-")
-                            return linkName === category
-                        })
-                        return <InfoPage category={queryItem} categoryList={catList} />
+                        let { category } = routerProps.match.params
+                        this.setState({ userPick: category })
+                        return <SearchResultsPage courses={this.state.courseList} />
                     }}
-                /> */}
+                />
             </div >
         )
     }
