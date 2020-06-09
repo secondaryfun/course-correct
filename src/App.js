@@ -45,7 +45,7 @@ export default class App extends Component {
 							</Link>
 						</header>
 						<CategoryBox categoryList={this.state.categoryList} />
-						<Form />
+						<Form categoryList={this.state.categoryList} />
 					</div>
 				</div>
 				<footer className="footer">

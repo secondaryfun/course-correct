@@ -1,0 +1,27 @@
+.form-wrapper {
+    margin-right: 1rem;
+    width: 500px;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.form-wrapper > ul {
+    margin: 0 auto;
+}
+
+.form-li {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form-button {
+    padding: .2rem;
+}
+
+.form-button:hover {
+    border: solid 3px #1B50FD;
+}
