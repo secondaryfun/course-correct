@@ -24,7 +24,7 @@ export class CategoryBox extends Component {
         return (
             <div>
                 <Route
-                    path="/"
+                    path="/courses/"
                     exact
                     render={() => {
                         return (

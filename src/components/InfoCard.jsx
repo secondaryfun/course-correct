@@ -15,7 +15,7 @@ class InfoCard extends Component {
     render() {
         let course = this.props.course
         return (
-            <Link to={`/course/${this.state.linkName}`} style={this.state.linkStyle} >
+            <a href={`https://www.udemy.com${course.url}`} target="_blank" style={this.state.linkStyle} >
 
                 <div className="info-card">
                     <h1>{course.title}</h1>
@@ -23,7 +23,7 @@ class InfoCard extends Component {
                     <img src={course["image_240x135"]} alt={course["title"]} />
                     <h4>{course["headline"]}</h4>
                 </div>
-            </Link>
+            </a>
         )
     }
 }

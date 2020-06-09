@@ -57,13 +57,20 @@ html, body, #root, .App {
       max-width: 1000px;
       display: flex;
       flex-flow: row nowrap;
-      justify-content: space-between;
+      justify-content: flex-end;
       margin: 0 auto;
       padding: 0 1rem;
+  }
+  .logo-link {
+    margin-right: auto;
   }
   .header h3 {
     position: relative;
     top: 4rem;
     margin-right: 2rem;
   }
+}
+
+.nav-link:hover {
+  border-bottom: solid 3px #1B50FD;
 }

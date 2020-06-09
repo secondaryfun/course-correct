@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Link, Route } from 'react-router-dom'
 import CategoryBox from './components/CategoryBox';
+import Form from './components/Form'
 import './App.css';
 
 
@@ -9,7 +11,7 @@ export default class App extends Component {
 
 		this.state = {
 			categoryList: { categories: [] },
-
+			linkStyle: { "textDecoration": "none", "color": "white" }
 		}
 	}
 	componentDidMount() {
@@ -30,10 +32,20 @@ export default class App extends Component {
 				<div className="body-wrapper">
 					<div className="body-overlay">
 						<header className="logo-header header">
-							<img src="/images/course-logo-color.png" alt="course-correct-logo" className="header__logo" />
-							<h3>Find your path</h3>
+							<div className="logo-link">
+								<Link to={"/courses/"} style={this.state.linkStyle} >
+									<img src="/images/course-logo-color.png" alt="course-correct-logo" className="header__logo" />
+								</Link>
+							</div>
+							<Link to={"/courses/"} style={this.state.linkStyle} >
+								<h3 className="nav-link" >Find your path</h3>
+							</Link>
+							<Link to={"/content-creators/"} style={this.state.linkStyle} >
+								<h3 className="nav-link" >Content Creators</h3>
+							</Link>
 						</header>
-						<CategoryBox categoryList={this.state.categoryList} sub={false} />
+						<CategoryBox categoryList={this.state.categoryList} />
+						<Form />
 					</div>
 				</div>
 				<footer className="footer">
