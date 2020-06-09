@@ -26,17 +26,19 @@ export default class App extends Component {
 	}
 	render() {
 		return (
-			<div className="body-wrapper">
-				<div className="body-overlay">
-					<header className="logo-header header">
-						<img src="/images/course-logo-color.png" alt="course-correct-logo" className="header__logo" />
-						<h3>Find your path</h3>
-					</header>
-					<CategoryBox categoryList={this.state.categoryList} sub={false} />
-					<footer className="footer">
-						<p>2020 CourseCorrect.</p>
-					</footer>
+			<div>
+				<div className="body-wrapper">
+					<div className="body-overlay">
+						<header className="logo-header header">
+							<img src="/images/course-logo-color.png" alt="course-correct-logo" className="header__logo" />
+							<h3>Find your path</h3>
+						</header>
+						<CategoryBox categoryList={this.state.categoryList} sub={false} />
+					</div>
 				</div>
+				<footer className="footer">
+					<p>2020 CourseCorrect.</p>
+				</footer>
 			</div>
 		)
 	}

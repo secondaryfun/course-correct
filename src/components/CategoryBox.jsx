@@ -36,7 +36,7 @@ export class CategoryBox extends Component {
                                     })
                                     }
                                 </section>
-                                <div className="progress-node--1"></div>
+                                <div className="progress-node"></div>
                             </div>
                         )
                     }}
@@ -75,7 +75,7 @@ export class CategoryBox extends Component {
                     render={routerProps => {
                         let { category } = routerProps.match.params
                         return (
-                            <div>
+                            <div className="category-box-wrapper" >
                                 <div className="progress-node progress-node--3"></div>
                                 <h4 className="search-results__header">Your recommendations are ready!</h4>
                                 <SearchResultsPage category={category} />

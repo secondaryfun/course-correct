@@ -1,5 +1,7 @@
 .info-card-wrapper {
     background: rgb(214, 211, 211);
+    border-radius: 8px;
+    padding: 2rem;
 }
 
 .info-card__header {
@@ -13,11 +15,17 @@
     font-size: 1.2rem;
     background-color: #1B50FD;
     padding: 0 1rem;
-    border-radius: 8px;
+    border-radius: 2px;
 }
 
 .info-card__container {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+}
+
+@media screen and (min-width: 850px) {
+    .info-card-wrapper {
+        max-width: 800px;
+    }
 }

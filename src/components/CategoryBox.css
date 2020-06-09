@@ -6,6 +6,9 @@
 .category-box-wrapper {
     font-size: 1.1rem;
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .category-box__button-container {
@@ -39,4 +42,10 @@
 .search-results__header {
     font-size: 1.5rem;
     font-weight: normal;
+}
+
+@media screen and (min-width: 850px) {
+    .category-box__button-container {
+        max-width: 800px;
+    }
 }
