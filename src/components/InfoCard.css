@@ -1,10 +1,16 @@
 .info-card {
-    width: 350px;
+    width: 240px;
     background: white;
-    color: rgba(0, 0, 0, .7)
+    color: rgba(0, 0, 0, .7);
+    border-radius: 8px;
+    padding: .5rem;
+    margin: .5rem;
 }
 
 .info-card h1 {
     font-size: 18px;
+}
 
+.info-card h4 {
+    text-align: left;
 }
