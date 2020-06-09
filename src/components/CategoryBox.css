@@ -32,3 +32,11 @@
 .progress-node--2 {
     background-image: url('/images/bar-half.png');
 }
+.progress-node--3 {
+    background-image: url('/images/bar-full.png');
+    margin-bottom: 1rem;
+}
+.search-results__header {
+    font-size: 1.5rem;
+    font-weight: normal;
+}

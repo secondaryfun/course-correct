@@ -1,0 +1,23 @@
+.info-card-wrapper {
+    background: #F7F7F7;
+}
+
+.info-card__header {
+    border-bottom: 3px  #1B50FD solid;
+    text-align: left;
+    padding-top: 1rem;
+}
+
+.info-card__category {
+    color: white;
+    font-size: 1.2rem;
+    background-color: #1B50FD;
+    padding: 0 1rem;
+    border-radius: 8px;
+}
+
+.info-card__container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}

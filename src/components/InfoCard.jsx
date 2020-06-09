@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-
 import './InfoCard.css'
 
 class InfoCard extends Component {
@@ -15,15 +14,14 @@ class InfoCard extends Component {
 
     render() {
         let course = this.props.course
-        console.log(course)
         return (
             <Link to={`/course/${this.state.linkName}`} style={this.state.linkStyle} >
 
                 <div className="info-card">
                     <h1>{course.title}</h1>
-                    <h4>{course["headline"]}</h4>
-                    <p>Rating: {course.rating}, # Reviews: {course["num_reviews"]}</p>
+                    <p>Rating: {course.rating.toFixed(2)} | # of Reviews: {course["num_reviews"]}</p>
                     <img src={course["image_240x135"]} alt={course["title"]} />
+                    <h4>{course["headline"]}</h4>
                 </div>
             </Link>
         )

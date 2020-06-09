@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, useLocation } from 'react-router-dom'
 
 import './CategoryBox.css';
 import categoryList from '../data/courseList.json'
@@ -14,23 +14,10 @@ export class CategoryBox extends Component {
         super(props)
         this.state = {
             courseList: { courses: [] },
-            userPick: ""
+            userPick: "",
         }
     }
-    componentDidUpdate(prevProps, prevState) {
-        this.state.userPick ? getCourses(this.state.userPick)
-    }
 
-    getCourses = (category) => {
-        const url = "https://rocky-refuge-49252.herokuapp.com/courses/sub-category/" + category.replace(/-/g, " ")
-
-        fetch(url)
-            .then(res => res.json())
-            .then(results => {
-                console.log(results)
-                this.setState({ courseList: results });
-            }).catch(err => console.log(err))
-    };
     render() {
         let catList = []
         if (this.props.categoryList.length) catList = this.props.categoryList
@@ -87,8 +74,14 @@ export class CategoryBox extends Component {
                     exact
                     render={routerProps => {
                         let { category } = routerProps.match.params
-                        this.setState({ userPick: category })
-                        return <SearchResultsPage courses={this.state.courseList} />
+                        return (
+                            <div>
+                                <div className="progress-node progress-node--3"></div>
+                                <h4 className="search-results__header">Your recommendations are ready!</h4>
+                                <SearchResultsPage category={category} />
+
+                            </div>
+                        )
                     }}
                 />
             </div >
