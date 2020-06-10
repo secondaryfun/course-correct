@@ -24,6 +24,22 @@ export default class FormEdit extends Component {
         }
         return data1
     }
+    handleDelete = e => {
+        e.preventDefault()
+        const url = "https://rocky-refuge-49252.herokuapp.com/courses/" + this.props.course["_id"]
+        fetch(url, {
+            method: "delete",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then(res => res.json()).then(res => {
+            console.log(res)
+            this.setState({ formResults: res, submitFormSuccessful: true })
+        }).catch(err => {
+            console.log(err)
+            this.setState({ formResults: err, submitFormSuccessful: false })
+        })
+    }
     handleSubmit = (e) => {
         e.preventDefault()
         let data = new FormData(e.target)
@@ -95,6 +111,7 @@ export default class FormEdit extends Component {
                         </li>
                         <li>
                             <button className="form-button" type="submit">Submit</button>
+                            <button className="form-button" onClick={this.handleDelete} >Delete</button>
                             {this.state.inputError ? <p>Submit Error, Please check your form for required (*) items.</p> : <p>* Required</p>}
                             {this.state.formResults ? <p>{this.state.formResults.title} Successfully Edited!</p> : <p></p>}
                         </li>
