@@ -95,19 +95,19 @@ export default class FormEdit extends Component {
                     <ul>
                         <li className="form-li" >
                             <label htmlFor="title">*Course Title:</label>
-                            <input type="text" id="title" name="title" placeholder={course.title} />
+                            <input type="text" id="title" name="title" defaultValue={course.title} placeholder={course.title} />
                         </li>
                         <li className="form-li" >
                             <label htmlFor="imageLink">Image Link:</label>
-                            <input type="number" id="imageLink" name="image_240x135" placeholder={course.image_240x135} />
+                            <input type="number" id="imageLink" name="image_240x135" defaultValue={course.image_240x135} placeholder={course.image_240x135} />
                         </li>
                         <li className="form-li" >
                             <label htmlFor="category">Course Category:</label>
-                            <input type="text" id="category" name="primary_subcategory" placeholder={course.primary_subcategory} />
+                            <input type="text" id="category" name="primary_subcategory" defaultValue={course.primary_subcategory} placeholder={course.primary_subcategory} />
                         </li>
                         <li className="form-li" >
                             <label htmlFor="headline">Course Headline:</label>
-                            <textarea id="headline" name="headline" placeholder={course.headline}  ></textarea>
+                            <textarea id="headline" name="headline" defaultValue={course.headline} placeholder={course.headline}  ></textarea>
                         </li>
                         <li>
                             <button className="form-button" type="submit">Submit</button>

@@ -14,6 +14,7 @@ class TitleButton extends Component {
     }
 
     render() {
+        console.log(this.state.linkName)
         return (
             <Link to={`/${this.props.route}/${this.state.linkName}`} style={this.state.linkStyle} >
 

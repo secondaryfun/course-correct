@@ -17,6 +17,7 @@ export class UserCoursePage extends Component {
         this.setState({ editView: !this.state.editview })
         console.log(this.state.editView)
     }
+
     render() {
         let course = {}
         this.props.course ? course = this.props.course : course = {}
