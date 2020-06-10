@@ -5,7 +5,6 @@ import './InfoCard.css'
 class InfoCard extends Component {
     constructor(props) {
         super(props)
-        console.log(props)
         this.state = {
             linkName: props.course["published_title"],
             linkStyle: { "textDecoration": "none" }
@@ -19,8 +18,8 @@ class InfoCard extends Component {
 
                 <div className="info-card">
                     <h1>{course.title}</h1>
-                    <p>Rating: {course.rating.toFixed(2)} | # of Reviews: {course["num_reviews"]}</p>
-                    <img src={course["image_240x135"]} alt={course["title"]} />
+                    <p>Rating: {course.rating ? course.rating.toFixed(2) : null} | # of Reviews: {course["num_reviews"]}</p>
+                    <img src={course["image_240x135"]} alt={course["title"]} className="info-card__img" />
                     <h4>{course["headline"]}</h4>
                 </div>
             </a>

@@ -1,3 +1,24 @@
+# Course Correct
+
+This a a fully implemented app that pulls down all the courses from Udemy with a rating of more than 4 stars and displays them by category.
+
+## Tech Stack
+
+* react, css, javascript, express, nodejs, mongodb
+
+## Feature List
+
+* Find courses by category and subcategory
+* Add a course
+* Edit a user generated course
+* Delete a user generated course
+
+## Feature Queue
+
+* Authentification
+* Creator accounts to submit your own courses
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

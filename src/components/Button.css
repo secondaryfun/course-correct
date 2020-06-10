@@ -1,0 +1,19 @@
+.basic-button {
+    height: min-content;
+    width: min-content;
+    background: lightgrey;
+    border-radius: 8px;
+    color: rgb(129, 129, 129);
+    padding: .2rem;
+    margin: 1rem;
+    text-align: center;
+
+}
+
+.basic-button:hover {
+    color: white;
+    background-color: hsl(204, 59%, 49%);
+}
+.basic-button:hover .category-button__icon {
+    filter: invert(1)
+}

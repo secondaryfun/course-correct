@@ -1,8 +1,10 @@
 .form-wrapper {
     margin-right: 1rem;
     width: 500px;
+    display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
 }
 
 .form-wrapper > ul {

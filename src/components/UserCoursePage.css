@@ -1,0 +1,14 @@
+.hidden {
+    display: none
+}
+
+.inactive {
+    background-color: rgb(80, 101, 126);
+}
+
+.hover:hover {
+    background-color: rgb(122, 151, 187);
+    color: #1B50FD;
+    font-weight: 800;
+    cursor: pointer;
+}

@@ -1,4 +1,4 @@
-.sub-category-button {
+.title-button {
         width: 250px;
         background: lightgrey;
         border-radius: 8px;
@@ -7,10 +7,10 @@
         padding: .5rem 0;
         margin: .5rem;
 }
-.sub-category-button:hover {
+.title-button:hover {
     color: white;
     background-color: hsl(204, 59%, 49%);
 }
-.sub-category-button p {
+.title-button p {
     margin: 0;
 }

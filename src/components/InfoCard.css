@@ -14,3 +14,9 @@
 .info-card h4 {
     text-align: left;
 }
+
+.info-card__img {
+    width: 240px;
+    height: 135px;
+    object-fit: cover;
+}

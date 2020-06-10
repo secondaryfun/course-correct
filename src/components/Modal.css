@@ -1,0 +1,24 @@
+.modal-overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    justify-content: center;
+}
+
+.modal__info-box {
+    min-width: 400px;
+    min-height: 200px;
+    position: absolute;
+    top: 25vh;
+    margin: 0 auto;
+    background: white;
+}
+
+.modal__info-box__body {
+    display: flex;
+    flex-flow: row wrap;
+}

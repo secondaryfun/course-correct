@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { Route, useLocation } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import './CategoryBox.css';
-import categoryList from '../data/courseList.json'
+import categories from '../data/courseList.json'
 import CategoryButton from './CategoryButton'
-import SubcategoryButton from './SubcategoryButton'
+import TitleButton from './titleButton'
 import SearchResultsPage from './SearchResultsPage'
-// console.log(categoryList)
 
+const categoryList = categories.map(item => { return { title: item } })
 
 export class CategoryBox extends Component {
     constructor(props) {
@@ -20,7 +20,8 @@ export class CategoryBox extends Component {
 
     render() {
         let catList = []
-        if (this.props.categoryList.length) catList = this.props.categoryList
+        this.props.categoryList.length ? catList = this.props.categoryList : catList = categoryList
+
         return (
             <div>
                 <Route
@@ -45,11 +46,9 @@ export class CategoryBox extends Component {
                     path={`/category/:queryItem`}
                     exact
                     render={routerProps => {
-                        console.log(catList)
                         let { queryItem } = routerProps.match.params
                         let category = catList.find(item => {
                             let linkName = item.title.replace(/ /g, "-")
-                            console.log(`list item: ${linkName} | queryItem: ${queryItem}`)
 
                             return linkName === queryItem
                         })
@@ -60,7 +59,7 @@ export class CategoryBox extends Component {
                                 <h4 className="category-box__header">Pick a subcategory to refine your selection.</h4>
                                 <section className="category-box__button-container">
                                     {category["sub-categories"].map(item => {
-                                        return <SubcategoryButton category={item} />
+                                        return <TitleButton title={item} route="sub-category" />
                                     })
                                     }
                                 </section>
