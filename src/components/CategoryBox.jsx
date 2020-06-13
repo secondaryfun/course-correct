@@ -59,7 +59,6 @@ export class CategoryBox extends Component {
                                 <h4 className="category-box__header">Pick a subcategory to refine your selection.</h4>
                                 <section className="category-box__button-container">
                                     {category["sub-categories"].map(item => {
-                                        console.log(item)
                                         return <TitleButton title={item} route="sub-category" />
                                     })
                                     }

@@ -52,7 +52,6 @@ export class Form extends Component {
             this.setState({ inputError: true })
             return;
         }
-        console.log(data)
 
         const url = "https://udemy-courses-api.herokuapp.com/courses/"
         fetch(url, {
@@ -63,13 +62,15 @@ export class Form extends Component {
             body: data
         }).then(res => res.json()).then(res => {
             console.log(res)
-            this.setState({ formResults: res, submitFormSuccessful: true })
+            this.setState({ formResults: res, submitFormSuccessful: true }, this.props.updateUserCourses)
         }).catch(err => {
             console.log(err)
             this.setState({ formResults: err, submitFormSuccessful: false })
         })
     }
-
+    clearForm = () => {
+        document.querySelector("#create-course-form").reset()
+    }
 
     render() {
         let categories = []
@@ -82,7 +83,8 @@ export class Form extends Component {
                     return (
                         <div className="form-wrapper">
                             <h3 className="form-type">Add a New Course</h3>
-                            <form onSubmit={this.handleSubmit} noValidate >
+
+                            <form onSubmit={this.handleSubmit} noValidate id="create-course-form" >
                                 <input type="hidden" name="primary_category" value="user" />
                                 <ul>
                                     <li className="form-li" >
@@ -105,8 +107,9 @@ export class Form extends Component {
                                         <label htmlFor="headline">Course Headline:</label>
                                         <textarea id="headline" name="headline" placeholder="Describe what your course teaches and who it is for in one or two lines."></textarea>
                                     </li>
-                                    <li>
+                                    <li className="form-li">
                                         <button className="form-button" type="submit">Add Your Course</button>
+                                        <button className="form-button" onClick={this.clearForm} >Clear Form</button>
                                         {this.state.inputError ? <p>Submit Error, Please check your form for required (*) items.</p> : <p>* Required</p>}
                                         {this.state.formResults ? <p>{this.state.formResults.title} Successfully Created!</p> : <p></p>}
                                     </li>

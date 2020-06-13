@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 
 import './CategoryBox.css';
-import CategoryButton from './CategoryButton'
 import TitleButton from './titleButton'
 import UserCoursePage from './UserCoursePage'
 
@@ -11,21 +10,10 @@ export class CategoryBoxUser extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            courseList: { courses: [] },
-            userPick: "",
         }
     }
     componentDidMount() {
-        this.getUserCourses()
-    }
-    getUserCourses() {
-        const url = "https://udemy-courses-api.herokuapp.com/courses/category/user"
-
-        fetch(url)
-            .then(res => res.json())
-            .then(result => {
-                this.setState({ courseList: result });
-            }).catch(err => console.log(err))
+        this.props.updateUserCourses()
     }
     render() {
         let courseList = []

@@ -18,9 +18,9 @@ export default class App extends Component {
 	}
 	componentDidMount() {
 		this.getCategories()
-		this.getUserCourses()
+		this.updateUserCourses()
 	}
-	getCategories() {
+	getCategories = () => {
 		const url = "https://udemy-courses-api.herokuapp.com/category"
 
 		fetch(url)
@@ -29,12 +29,13 @@ export default class App extends Component {
 				this.setState({ categoryList: result });
 			}).catch(err => console.log(err))
 	}
-	getUserCourses() {
+	updateUserCourses = () => {
 		const url = "https://udemy-courses-api.herokuapp.com/courses/category/user"
 
 		fetch(url)
 			.then(res => res.json())
 			.then(result => {
+				console.log('Updated user courses.')
 				this.setState({ userCourseList: result });
 			}).catch(err => console.log(err))
 	}
@@ -61,8 +62,8 @@ export default class App extends Component {
 
 						</header>
 						<CategoryBox categoryList={this.state.categoryList} />
-						<CategoryBoxUser courseList={this.state.userCourseList} />
-						<Form categoryList={this.state.categoryList} />
+						<CategoryBoxUser courseList={this.state.userCourseList} updateUserCourses={this.updateUserCourses} />
+						<Form categoryList={this.state.categoryList} updateUserCourses={this.updateUserCourses} />
 					</div>
 				</div>
 				<footer className="footer">
