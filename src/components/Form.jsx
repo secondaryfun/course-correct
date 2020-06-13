@@ -1,25 +1,6 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import './Form.css';
-import FormEdit from './FormEdit'
-
-
-
-const inputParsers = {
-    date(input) {
-        const [month, day, year] = input.split('/');
-        return `${year}-${month}-${day}`;
-    },
-    uppercase(input) {
-        return input.toUpperCase();
-    },
-    number(input) {
-        return parseFloat(input);
-    },
-    require(input) {
-        return input ? input : false
-    }
-};
 
 export class Form extends Component {
     constructor(props) {

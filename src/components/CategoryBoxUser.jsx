@@ -50,7 +50,7 @@ export class CategoryBoxUser extends Component {
                         return (
                             <div className="category-box-wrapper" >
                                 <h4 className="search-results__header">Your recommendations are ready!</h4>
-                                <UserCoursePage course={userSelection} />
+                                <UserCoursePage course={userSelection} updateUserCourses={this.props.updateUserCourses} />
 
                             </div>
                         )

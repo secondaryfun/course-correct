@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Modal from './Modal'
-import Button from './Button'
 import './FormEdit.css'
 
 export default class FormEdit extends Component {
@@ -60,20 +58,11 @@ export default class FormEdit extends Component {
             body: data
         }).then(res => res.json()).then(res => {
             console.log(res)
-            this.setState({ formResults: res, submitFormSuccessful: true })
+            this.setState({ formResults: res, submitFormSuccessful: true }, this.props.updateUserCourses)
         }).catch(err => {
             console.log(err)
             this.setState({ formResults: err, submitFormSuccessful: false })
         })
-    }
-    pickOne = (item) => {
-        this.setState({ isModalOn: false, selectedItem: item })
-    }
-    exitModal = () => {
-        this.setState({ isModalOn: false })
-    }
-    showModal = e => {
-        this.setState({ isModalOn: true })
     }
     render() {
         let course = {}
@@ -82,14 +71,6 @@ export default class FormEdit extends Component {
             < div className="form-wrapper edit-form" >
                 <h3 className="form-type">Course Editor</h3>
                 <p>Edit the fields below and click Submit to make your changes.</p>
-                {/* <Modal
-                    data={{
-                        title: "You are about to update this course. Are you sure?",
-                        selectionList: "",
-                        callback: this.handleSubmit
-                    }}
-                    display={this.state.isModalOn}
-                /> */}
                 <form onSubmit={this.handleSubmit} noValidate  >
                     <input type="hidden" name="primary_category" value="user" />
                     <ul>
@@ -99,7 +80,7 @@ export default class FormEdit extends Component {
                         </li>
                         <li className="form-li" >
                             <label htmlFor="imageLink">Image Link:</label>
-                            <input type="number" id="imageLink" name="image_240x135" defaultValue={course.image_240x135} placeholder={course.image_240x135} />
+                            <input type="text" id="imageLink" name="image_240x135" defaultValue={course.image_240x135} placeholder={course.image_240x135} />
                         </li>
                         <li className="form-li" >
                             <label htmlFor="category">Course Category:</label>
