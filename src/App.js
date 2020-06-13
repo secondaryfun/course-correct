@@ -21,7 +21,7 @@ export default class App extends Component {
 		this.getUserCourses()
 	}
 	getCategories() {
-		const url = "https://rocky-refuge-49252.herokuapp.com/category"
+		const url = "https://udemy-courses-api.herokuapp.com/category"
 
 		fetch(url)
 			.then(res => res.json())
@@ -30,7 +30,7 @@ export default class App extends Component {
 			}).catch(err => console.log(err))
 	}
 	getUserCourses() {
-		const url = "https://rocky-refuge-49252.herokuapp.com/courses/category/user"
+		const url = "https://udemy-courses-api.herokuapp.com/courses/category/user"
 
 		fetch(url)
 			.then(res => res.json())

@@ -13,19 +13,18 @@ export class CategoryBoxUser extends Component {
         this.state = {
             courseList: { courses: [] },
             userPick: "",
-            userCourseList: { courses: [] },
         }
     }
     componentDidMount() {
         this.getUserCourses()
     }
     getUserCourses() {
-        const url = "https://rocky-refuge-49252.herokuapp.com/courses/category/user"
+        const url = "https://udemy-courses-api.herokuapp.com/courses/category/user"
 
         fetch(url)
             .then(res => res.json())
             .then(result => {
-                this.setState({ userCourseList: result });
+                this.setState({ courseList: result });
             }).catch(err => console.log(err))
     }
     render() {

@@ -54,7 +54,7 @@ export class Form extends Component {
         }
         console.log(data)
 
-        const url = "https://rocky-refuge-49252.herokuapp.com/courses/"
+        const url = "https://udemy-courses-api.herokuapp.com/courses/"
         fetch(url, {
             method: "post",
             headers: {

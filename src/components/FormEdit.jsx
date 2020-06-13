@@ -51,7 +51,7 @@ export default class FormEdit extends Component {
         }
         console.log(data)
 
-        const url = "https://rocky-refuge-49252.herokuapp.com/courses/" + this.props.course["_id"]
+        const url = "https://udemy-courses-api.herokuapp.com/courses/" + this.props.course["_id"]
         fetch(url, {
             method: "put",
             headers: {

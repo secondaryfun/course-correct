@@ -16,7 +16,7 @@ export class SearchResultsPage extends Component {
     }
 
     getCourses() {
-        const url = "https://rocky-refuge-49252.herokuapp.com/courses/sub-category/" + this.props.category.replace(/-/g, " ")
+        const url = "https://udemy-courses-api.herokuapp.com/courses/sub-category/" + this.props.category.replace(/-/g, " ")
 
         fetch(url)
             .then(res => res.json())
