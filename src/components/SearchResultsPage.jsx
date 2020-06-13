@@ -13,18 +13,22 @@ export class SearchResultsPage extends Component {
     }
     componentDidMount() {
         this.getCourses()
+        console.log('connected to searchresultspage')
     }
 
     getCourses() {
+        console.log(this.props.category)
         const url = "https://udemy-courses-api.herokuapp.com/courses/sub-category/" + this.props.category.replace(/-/g, " ")
 
         fetch(url)
             .then(res => res.json())
             .then(results => {
+                console.log(results)
                 this.setState({ courseList: results });
             }).catch(err => console.log(err))
     };
     render() {
+        console.log(this.state.courseList)
         let courses = []
         if (this.state.courseList.length) courses = this.state.courseList
         return (
