@@ -5,6 +5,7 @@ import CategoryBoxUser from './components/CategoryBoxUser';
 import Form from './components/Form'
 import './App.css';
 
+console.log(process.env.NODE_ENV)
 
 export default class App extends Component {
 	constructor(props) {
