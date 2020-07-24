@@ -23,6 +23,13 @@ This a a fully deployed app that pulls down all the courses from Udemy with a ra
 * Backend: express, nodejs, mongodb
 * Frontend: react, css, javascript
 
+## Installation
+
+1. Fork and clone down the repo.
+2. Change into repo directory.
+3. Run "npm install".
+```npm install```
+
 ## Contributing
 
 Feel free to contribute if you find errors or identify a better way to solve the game. 
