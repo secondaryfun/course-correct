@@ -27,7 +27,7 @@ This a a fully deployed app that pulls down all the courses from Udemy with a ra
 
 1. Fork and clone down the repo.
 2. Change into repo directory.
-3. Run "npm install".
+3. Run: 
 ```npm install```
 
 ## Contributing
