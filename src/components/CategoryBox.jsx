@@ -30,7 +30,7 @@ export class CategoryBox extends Component {
                     render={() => {
                         return (
                             <div className="category-box-wrapper">
-                                <h4 className="category-box__header">What do you want to learn about?</h4>
+                                <h4 className="category-box__header">Choose a category to view top rated courses from Udemy.</h4>
                                 <section className="category-box__button-container">
                                     {catList.map(cat => {
                                         return <CategoryButton category={cat.title} />

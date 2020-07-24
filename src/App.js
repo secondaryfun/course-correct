@@ -58,7 +58,7 @@ export default class App extends Component {
 								<h3 className="nav-link" >Add a Course</h3>
 							</Link>
 							<Link to={"/user-courses/"} style={this.state.linkStyle} >
-								<h3 className="nav-link" >View Your Courses</h3>
+								<h3 className="nav-link" >View Added Courses</h3>
 							</Link>
 
 						</header>
