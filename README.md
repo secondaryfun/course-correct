@@ -1,6 +1,6 @@
 # Course Correct
 
-This a a fully deployed app that pulls down all the courses from Udemy with a rating of more than 4 stars and displays them by category.
+React app that pulls down all the courses from Udemy with a rating of more than 4 stars and displays them by category. Also allows users to add their own courses.
 
 ## Feature List
 
